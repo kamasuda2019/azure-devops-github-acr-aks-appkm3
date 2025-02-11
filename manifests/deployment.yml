@@ -1,0 +1,19 @@
+apiVersion : apps/v1
+kind: Deployment
+metadata:
+  name: aksappkm 
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: aksappkm
+  template:
+    metadata:
+      labels:
+        app: aksappkm 
+    spec:
+      containers:
+        - name: aksappkm 
+          image: acr0713.azurecr.io/aksappkm
+          ports:
+          - containerPort: 80
